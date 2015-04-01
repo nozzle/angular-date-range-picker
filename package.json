@@ -1,24 +1,21 @@
 {
-  "name": "angular-date-range-picker",
+  "name": "nz-datepicker",
   "version": "0.4.15",
   "authors": [
     "Tymon Tobolski <tymon.tobolski@monterail.com>",
-    "Krzysztof Jung <krzysztof.jung@monterail.com>"
+    "Krzysztof Jung <krzysztof.jung@monterail.com>",
+    "Tanner Linsley <tannerlinsley@gmail.com>"
   ],
-  "repository": "git://github.com/monterail/angular-date-range-picker.git",
+  "repository": "git://github.com/nozzle/nz-datepicker.git",
   "description": "Date Picker without jQuery",
   "main": [
-    "build/angular-date-range-picker.js",
-    "build/angular-date-range-picker.css"
+    "build/nz-datepicker.js",
+    "build/nz-datepicker.css"
   ],
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-coffee": "~0.7.0",
-    "grunt-contrib-less": "~0.7.0",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-watch": "~0.5.2",
-    "grunt-autoprefixer": "~0.4.0",
-    "grunt-release": "~0.5.1"
+    "gulp-ng-annotate": "^0.5.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0"
   },
   "keywords": [
     "angular",
@@ -26,12 +23,16 @@
     "picker"
   ],
   "license": "MIT",
-  "homepage": "http://github.com/monterail/angular-date-range-picker",
+  "homepage": "http://github.com/nozzle/nz-datepicker",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-stylus": "^2.0.1"
+  }
 }

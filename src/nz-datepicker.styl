@@ -1,0 +1,154 @@
+.nz-datepicker-
+    &panel
+        padding: 8px;
+        float: right;
+        box-sizing: content-box;
+
+    &next-month
+        right: 4px;
+
+    &prev-month
+        left: 4px;
+
+    &prev-month:hover, &next-month:hover
+        color: #571e93;
+
+    &prev-month, &next-month
+        position: absolute;
+        top: 8px;
+        font-size: 12px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        text-align: center;
+        font-weight: bold;
+
+    &prev-month
+         left: 16px; 
+    &next-month
+         right: 16px; 
+    &apply
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+    &input
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        height: 20px;
+        line-height: 20px;
+        display: inline-block;
+        position: relative;
+        box-sizing: content-box;
+
+
+    &calendar
+        border-collapse: collapse;
+        border-spacing:0;
+        padding: 0;
+        width: 150px;
+        margin: 0 5px;
+        box-sizing: content-box;
+
+    &timesheet
+        position: relative;
+        overflow: hidden;
+        float: left;
+        padding: 10px 10px;
+
+    &timesheet:before,&timesheet:after
+        content: " ";
+        display: table;
+
+    &timesheet:after
+        clear: both;
+
+    &calendar-day
+        border: 1px solid #fff;
+        text-align: center;
+        cursor: pointer;
+        padding: 0;
+
+    &calendar-day&calendar-day-disabled
+        color: #ccc;
+
+    &calendar-day&calendar-day-selected
+        color: #fff;
+        background: #571e93;
+
+    &calendar-day&calendar-day-disabled:hover
+        color: #ccc;
+        background: #fff;
+
+    &calendar-day-start
+        color: #fff;
+        background: #571e93;
+
+    &month
+        width: 160px;
+        float: left;
+
+    &calendar-weekday
+        font-weight: normal;
+        border-bottom: 1px solid #ccc
+
+
+    &picker
+        position: absolute;
+        top: 30px;
+        left: -1px;
+        overflow: hidden;
+        background: #fff;
+        z-index: 1000;
+        border: 1px solid #ccc;
+        box-sizing: content-box;
+
+
+    &-ranged
+        width: 700px;
+        height: 183px;
+
+
+    &calendar-day:hover
+        background: #000;
+        color: #fff;
+
+    &month-name
+        text-align: center;
+        background: #f8f8f8;
+
+    &apply
+        color: #571e93;
+        border: 1px solid #571e93;
+        font-size: 12px;
+        padding: 0 12px;
+        height: 25px;
+        border-radius: 3px;
+        background: transparent;
+        vertical-align: middle;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        transition: background 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.1s ease-out;
+
+    &cancel
+        padding: 0 8px;
+        display: inline-block;
+        color: #000;
+        cursor: pointer;
+
+    &ranged, &buttons
+        position: absolute;
+        bottom: 10px;
+
+    &apply:hover
+        background: #571e93;
+        color: #fff;
+
+    &cancel:hover
+        text-decoration: underline;
+
+
+    &cancel
+        text-decoration: none;
+
