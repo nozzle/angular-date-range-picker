@@ -6,6 +6,35 @@
     module.directive("nzDatepicker", ["$compile", "$timeout", function($compile, $timeout) {
         var CUSTOM = "CUSTOM";
 
+        var pickerTemplate = [
+            '<div ng-show="visible" class="nz-datepicker-picker" ng-click="handlePickerClick($event)" ng-class="{\'nz-datepicker-ranged\': showRanged }">',
+            '    <div class="nz-datepicker-timesheet">',
+            '        <a ng-click="move(-1, $event)" class="nz-datepicker-prev-month">&#9664;</a>',
+            '        <div ng-repeat="month in months" class="nz-datepicker-month">',
+            '            <div class="nz-datepicker-month-name">{{month.name}}</div>',
+            '            <table class="nz-datepicker-calendar">',
+            '                <tr>',
+            '                    <th ng-repeat="day in month.weeks[1]" class="nz-datepicker-calendar-weekday">{{day.date.format(\'dd\')}}</th>',
+            '                </tr>',
+            '                <tr ng-repeat="week in month.weeks">',
+            '                    <td ng-class="{\'nz-datepicker-calendar-day\': day,\'nz-datepicker-calendar-day-selected\': day.selected,\'nz-datepicker-calendar-day-disabled\': day.disabled,\'nz-datepicker-calendar-day-start\': day.start}" ng-repeat="day in week track by $index" ng-click="select(day, $event)">',
+            '                        <div class="nz-datepicker-calendar-day-wrapper">{{day.date.date()}}</div>',
+            '                    </td>',
+            '                </tr>',
+            '            </table>',
+            '        </div>',
+            '        <a ng-click="move(+1, $event)" class="nz-datepicker-next-month">&#9654;</a>',
+            '    </div>',
+            '    <div class="nz-datepicker-panel">',
+            '       <span ng-show="showRanged">',
+            '           <select ng-click="prevent_select($event)" ng-model="quick" ng-options="e.range as e.label for e in quickList">',
+            '           </select>',
+            '       </span>',
+            '        <span class="nz-datepicker-buttons"><a ng-click="ok($event)" class="nz-datepicker-apply">Apply</a><a ng-click="hide($event)" class="nz-datepicker-cancel">cancel</a></span>',
+            '    </div>',
+            '</div>',
+        ].join('');
+
         return {
             restrict: "AE",
             replace: false,
@@ -20,32 +49,6 @@
                 '          <span ng-hide="!!model">Select date</span>',
                 '     </span>',
                 '</span>',
-                '<div ng-show="visible" class="nz-datepicker-picker" ng-click="handlePickerClick($event)" ng-class="{\'nz-datepicker-ranged\': showRanged }">',
-                '    <div class="nz-datepicker-timesheet">',
-                '        <a ng-click="move(-1, $event)" class="nz-datepicker-prev-month">&#9664;</a>',
-                '        <div ng-repeat="month in months" class="nz-datepicker-month">',
-                '            <div class="nz-datepicker-month-name">{{month.name}}</div>',
-                '            <table class="nz-datepicker-calendar">',
-                '                <tr>',
-                '                    <th ng-repeat="day in month.weeks[1]" class="nz-datepicker-calendar-weekday">{{day.date.format(\'dd\')}}</th>',
-                '                </tr>',
-                '                <tr ng-repeat="week in month.weeks">',
-                '                    <td ng-class="{\'nz-datepicker-calendar-day\': day,\'nz-datepicker-calendar-day-selected\': day.selected,\'nz-datepicker-calendar-day-disabled\': day.disabled,\'nz-datepicker-calendar-day-start\': day.start}" ng-repeat="day in week track by $index" ng-click="select(day, $event)">',
-                '                        <div class="nz-datepicker-calendar-day-wrapper">{{day.date.date()}}</div>',
-                '                    </td>',
-                '                </tr>',
-                '            </table>',
-                '        </div>',
-                '        <a ng-click="move(+1, $event)" class="nz-datepicker-next-month">&#9654;</a>',
-                '    </div>',
-                '    <div class="nz-datepicker-panel">',
-                '       <span ng-show="showRanged">',
-                '           <select ng-click="prevent_select($event)" ng-model="quick" ng-options="e.range as e.label for e in quickList">',
-                '           </select>',
-                '       </span>',
-                '        <span class="nz-datepicker-buttons"><a ng-click="ok($event)" class="nz-datepicker-apply">Apply</a><a ng-click="hide($event)" class="nz-datepicker-cancel">cancel</a></span>',
-                '    </div>',
-                '</div>',
             ].join(''),
             scope: {
                 model: "=ngModel",
@@ -55,6 +58,10 @@
                 callback: "&"
             },
             link: function($scope, element, attrs) {
+
+                var picker = $compile(angular.element(pickerTemplate))($scope);
+
+                angular.element(document.body).append(picker);
 
                 $scope.quick = null;
                 $scope.range = null;
