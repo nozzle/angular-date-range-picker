@@ -7,7 +7,7 @@
         var CUSTOM = "CUSTOM";
 
         var pickerTemplate = [
-            '<div ng-show="visible" class="nz-datepicker-picker" ng-click="handlePickerClick($event)" ng-class="{\'nz-datepicker-ranged\': showRanged }">',
+            '<div ng-show="visible" class="nz-datepicker-picker {{pickerClass}}" ng-click="handlePickerClick($event)" ng-class="{\'nz-datepicker-ranged\': showRanged}">',
             '    <div class="nz-datepicker-timesheet">',
             '        <a ng-click="move(-1, $event)" class="nz-datepicker-prev-month">&#9664;</a>',
             '        <div ng-repeat="month in months" class="nz-datepicker-month">',
@@ -52,6 +52,7 @@
             ].join(''),
             scope: {
                 model: "=ngModel",
+                pickerClass: "@pickerClass",
                 options: "=?",
                 ranged: "=",
                 pastDates: "@",

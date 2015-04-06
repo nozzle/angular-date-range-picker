@@ -19,7 +19,7 @@
             <h1>Date range picker</h1>
             <nz-datepicker ng-model="range"></nz-datepicker>
             <pre>{{ range.start.toDate() }} - {{ range.end.toDate() }}</pre>
-            <nz-datepicker ng-model="range2" ranged="true" callback="fireCallback(range2)"></nz-datepicker>
+            <nz-datepicker ng-model="range2" ranged="true" callback="fireCallback(range2)" picker-class="custom"></nz-datepicker>
             <button ng-click="change()">Change</button>
         </div>
         <div>
