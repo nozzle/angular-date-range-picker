@@ -51,7 +51,6 @@
             link: function($scope, element, attrs) {
 
                 var picker = $compile(angular.element(pickerTemplate))($scope);
-
                 angular.element(document.body).append(picker);
 
                 $scope.quick = null;
@@ -111,6 +110,7 @@
 
                 // Cleanup
                 $scope.$on('$destroy', function() {
+                    picker.remove();
                     return angular.element(document).unbind('click', documentClickFn);
                 });
 
