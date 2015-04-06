@@ -1,154 +1,155 @@
 .nz-datepicker-
+    
+    &picker
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 520px
+        min-height: 253px
+        max-width: 90%
+        max-height: 90%
+        overflow: hidden
+        background: #FFF
+        z-index: 1000
+        box-shadow: 0 0 90px 0 rgba(0, 0, 0, 0.1), 0 0 20px 0 rgba(0, 0, 0, 0.2)
+        border-radius: 2px
+        box-sizing: border-box
+        transform: translate(-50%,-50%)
+        text-align:center
+        padding:10px;
+        
+     &timesheet
+        position: relative
+        overflow: hidden
+        display:inline-block
+        padding: 10px
+
+    &timesheet:before,&timesheet:after
+        content: " "
+        display: table
+
+    &timesheet:after
+        clear: both
+        
+    &month
+        width: 160px;
+        display: inline-block;
+        
+    &month-name
+        text-align: center
+        background: #EAEAEA;
+        padding:5px 0;
+        
     &panel
-        padding: 8px;
-        float: right;
-        box-sizing: content-box;
+        padding: 8px
+        float: right
+        box-sizing: content-box
 
     &next-month
-        right: 4px;
+        right: 4px
 
     &prev-month
-        left: 4px;
+        left: 4px
 
     &prev-month:hover, &next-month:hover
-        color: #571e93;
+        color: #444
 
     &prev-month, &next-month
-        position: absolute;
-        top: 8px;
-        font-size: 12px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        text-align: center;
-        font-weight: bold;
+        position: absolute
+        top: 15px
+        font-size: 12px
+        border: none
+        background: transparent
+        cursor: pointer
+        text-align: center
+        font-weight: bold
 
     &prev-month
-         left: 16px; 
+         left: 16px 
     &next-month
-         right: 16px; 
+         right: 16px 
     &apply
-        background: transparent;
-        border: none;
-        cursor: pointer;
+        background: transparent
+        border: none
+        cursor: pointer
 
     &input
-        border: 1px solid #ccc;
-        padding: 5px 10px;
-        height: 20px;
-        line-height: 20px;
-        display: inline-block;
-        position: relative;
-        box-sizing: content-box;
+        border: 1px solid #ccc
+        padding: 5px 10px
+        height: 20px
+        line-height: 20px
+        display: inline-block
+        position: relative
+        box-sizing: content-box
 
 
     &calendar
-        border-collapse: collapse;
-        border-spacing:0;
-        padding: 0;
-        width: 150px;
-        margin: 0 5px;
-        box-sizing: content-box;
-
-    &timesheet
-        position: relative;
-        overflow: hidden;
-        float: left;
-        padding: 10px 10px;
-
-    &timesheet:before,&timesheet:after
-        content: " ";
-        display: table;
-
-    &timesheet:after
-        clear: both;
+        border-collapse: collapse
+        border-spacing:0
+        padding: 0
+        width: 150px
+        margin: 0 5px
+        box-sizing: content-box
 
     &calendar-day
-        border: 1px solid #fff;
-        text-align: center;
-        cursor: pointer;
-        padding: 0;
+        text-align: center
+        cursor: pointer
+        padding: 5px 0px;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.03);
 
     &calendar-day&calendar-day-disabled
-        color: #ccc;
+        color: #ccc
 
     &calendar-day&calendar-day-selected
-        color: #fff;
-        background: #571e93;
+        color: #fff
+        background: #444
 
     &calendar-day&calendar-day-disabled:hover
-        color: #ccc;
-        background: #fff;
+        color: #ccc
+        background: #fff
 
     &calendar-day-start
-        color: #fff;
-        background: #571e93;
-
-    &month
-        width: 160px;
-        float: left;
+        color: #fff
+        background: #444
 
     &calendar-weekday
-        font-weight: normal;
-        border-bottom: 1px solid #ccc
-
-
-    &picker
-        position: absolute;
-        top: 30px;
-        left: -1px;
-        overflow: hidden;
-        background: #fff;
-        z-index: 1000;
-        border: 1px solid #ccc;
-        box-sizing: content-box;
-
-
-    &-ranged
-        width: 700px;
-        height: 183px;
-
+        font-weight: bold;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 1px 0px;
+        font-size: 8px;
 
     &calendar-day:hover
-        background: #000;
-        color: #fff;
-
-    &month-name
-        text-align: center;
-        background: #f8f8f8;
+        background: #000
+        color: #fff
 
     &apply
-        color: #571e93;
-        border: 1px solid #571e93;
-        font-size: 12px;
-        padding: 0 12px;
-        height: 25px;
-        border-radius: 3px;
-        background: transparent;
-        vertical-align: middle;
-        font-weight: bold;
-        cursor: pointer;
-        outline: none;
-        transition: background 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.1s ease-out;
+        color: #444
+        border: 1px solid #444
+        font-size: 12px
+        padding: 0 12px
+        height: 25px
+        border-radius: 3px
+        background: transparent
+        vertical-align: middle
+        font-weight: bold
+        cursor: pointer
+        outline: none
+        transition: background 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.1s ease-out
 
     &cancel
-        padding: 0 8px;
-        display: inline-block;
-        color: #000;
-        cursor: pointer;
-
-    &ranged, &buttons
-        position: absolute;
-        bottom: 10px;
+        padding: 0 8px
+        display: inline-block
+        color: #000
+        cursor: pointer
 
     &apply:hover
-        background: #571e93;
-        color: #fff;
+        background: #444
+        color: #fff
 
     &cancel:hover
-        text-decoration: underline;
+        text-decoration: underline
 
 
     &cancel
-        text-decoration: none;
+        text-decoration: none
 

@@ -3,7 +3,7 @@
 
 <head>
     <title>Example</title>
-    <link rel="stylesheet" type="text/css" href="../build/nz-datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="../dist/nz-datepicker.css" />
     <style type="text/css">
     * {
         font-size: 10px;
@@ -28,13 +28,13 @@
         </div>
     </div>
     <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="../bower_components/angular-bindonce/bindonce.js"></script>
     <script type="text/javascript" src="../bower_components/moment/moment.js"></script>
     <script type="text/javascript" src="../bower_components/moment-range/lib/moment-range.js"></script>
-    <script type="text/javascript" src="../build/nz-datepicker.js"></script>
+    <script type="text/javascript" src="../src/nz-datepicker.js"></script>
     <script type="text/javascript">
     angular.module("testapp", ["nzDatepicker"]);
     angular.module("testapp").controller("TestCtrl", function($scope) {
+
         $scope.range = moment().range("2012-11-05", "2013-01-25");
 
         $scope.change = function() {

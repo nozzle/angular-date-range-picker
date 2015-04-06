@@ -6,7 +6,7 @@
     "Krzysztof Jung <krzysztof.jung@monterail.com>",
     "Tanner Linsley <tannerlinsley@gmail.com>"
   ],
-  "repository": "git://github.com/nozzle/nz-datepicker.git",
+  "repository": "git://github.com/nozzle/nzDatepicker.git",
   "description": "Date Picker without jQuery",
   "main": [
     "build/nz-datepicker.js",
@@ -23,7 +23,7 @@
     "picker"
   ],
   "license": "MIT",
-  "homepage": "http://github.com/nozzle/nz-datepicker",
+  "homepage": "http://github.com/nozzle/nzDatepicker",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -33,6 +33,7 @@
   ],
   "dependencies": {
     "gulp": "^3.8.11",
-    "gulp-stylus": "^2.0.1"
+    "gulp-stylus": "^2.0.1",
+    "pushstate-server": "^1.5.0"
   }
 }

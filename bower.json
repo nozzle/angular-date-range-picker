@@ -1,22 +1,22 @@
 {
-    "name": "nz-daterange",
+    "name": "nz-datepicker",
     "version": "0.4.15",
     "authors": [
         "Tymon Tobolski <tymon.tobolski@monterail.com>",
         "Krzysztof Jung <krzysztof.jung@monterail.com>",
         "Tanner Linsley <tannerlinsley@gmail.com>"
     ],
-    "repository": "git://github.com/nozzle/nz-daterange.git",
+    "repository": "git://github.com/nozzle/nzDatepicker.git",
     "description": "Date Picker without jQuery",
     "main": [
         "build/nz-daterange.js",
         "build/nz-daterange.css"
     ],
     "dependencies": {
-        "angular": "~1.3",
+        "angular": ">1.3.0",
         "moment": "^2.6.0",
         "moment-range": "~1.0.1"
     },
     "license": "MIT",
-    "homepage": "http://github.com/nozzle/nz-daterange"
+    "homepage": "http://github.com/nozzle/nzDatepicker"
 }

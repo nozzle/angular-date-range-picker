@@ -3,11 +3,13 @@ var ngAnnotate = require('gulp-ng-annotate');
 var stylus = require('gulp-stylus');
 var uglify = require('gulp-uglify');
 var rename = require("gulp-rename");
+var server = require('pushstate-server');
 
 
 
 gulp.task('js', jsTask);
 gulp.task('css', cssTask);
+gulp.task('serve', serveTask);
 gulp.task('default', ['js', 'css']);
 
 
@@ -33,4 +35,12 @@ function cssTask() {
         }))
         .pipe(rename("nz-datepicker.min.css"))
         .pipe(gulp.dest('./dist'));
+}
+
+
+function serveTask() {
+    return server.start({
+        port: 3000,
+        directory: './'
+    });
 }
