@@ -1,5 +1,14 @@
+.nz-datepicker-wrap {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  pointer-events: none;
+}
 .nz-datepicker-picker {
   position: absolute;
+  pointer-events: all;
   top: 50%;
   left: 50%;
   width: 520px;
