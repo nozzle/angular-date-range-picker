@@ -75,7 +75,7 @@
                 $scope.handlePickerClick = handlePickerClick;
 
                 // Events
-                angular.element(document).bind("click", documentClickFn);
+
                 element.bind("click", function(e) {
                     if (e != null) {
                         if (typeof e.stopPropagation === "function") {
@@ -150,6 +150,7 @@
                 }
 
                 function show() {
+                    angular.element(document).bind("click", documentClickFn);
                     $scope.selection = $scope.model;
                     calculateRange();
                     prepare();
@@ -157,6 +158,7 @@
                 }
 
                 function hide($event) {
+                    angular.element(document).unbind("click", documentClickFn);
                     if ($event != null) {
                         if (typeof $event.stopPropagation === "function") {
                             $event.stopPropagation();
