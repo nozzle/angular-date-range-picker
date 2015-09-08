@@ -132,20 +132,23 @@
 
                 function defaultOptions() {
                     return [{
-                        label: "This week",
-                        range: moment().range(moment().startOf("week").startOf("day"), moment().endOf("week").startOf("day"))
+                        label: "Last 7 Days",
+                        range: moment().range(moment().startOf("day").subtract(1, 'week'), moment().startOf("day"))
                     }, {
-                        label: "Next week",
-                        range: moment().range(moment().startOf("week").add(1, "week").startOf("day"), moment().add(1, "week").endOf("week").startOf("day"))
+                        label: "Last 2 Weeks",
+                        range: moment().range(moment().startOf("day").subtract(2, 'week'), moment().startOf("day"))
                     }, {
-                        label: "This fortnight",
-                        range: moment().range(moment().startOf("week").startOf("day"), moment().add(1, "week").endOf("week").startOf("day"))
+                        label: "Last Month",
+                        range: moment().range(moment().startOf("day").subtract(1, 'month'), moment().startOf("day"))
                     }, {
-                        label: "This month",
-                        range: moment().range(moment().startOf("month").startOf("day"), moment().endOf("month").startOf("day"))
+                        label: "Last 3 Months",
+                        range: moment().range(moment().startOf("day").subtract(3, 'month'), moment().startOf("day"))
                     }, {
-                        label: "Next month",
-                        range: moment().range(moment().startOf("month").add(1, "month").startOf("day"), moment().add(1, "month").endOf("month").startOf("day"))
+                        label: "Last 6 Months",
+                        range: moment().range(moment().startOf("day").subtract(6, 'month'), moment().startOf("day"))
+                    }, {
+                        label: "Last Year",
+                        range: moment().range(moment().startOf("day").subtract(1, 'year'), moment().startOf("day"))
                     }];
                 }
 
